@@ -13,8 +13,8 @@ class Main
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext
         ("ApplicationContext.xml");
 
-        IMusic music = context.getBean("musicBean", IMusic.class);
-        MusicPlayer musicPlayer = new MusicPlayer(music);
+       
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         musicPlayer.playMusic();
         context.close();
     }
