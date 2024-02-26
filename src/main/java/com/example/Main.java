@@ -2,17 +2,16 @@ package com.example;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-class Main 
-{
-    public static void main( String[] args ) {
-
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext
-        ("ApplicationContext.xml");
+public class Main {
+    public static void main(String[] args) {
        
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+
         musicPlayer.playMusic();
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
+
+        // System.out.println("Name: " + musicPlayer.getName());
+        // System.out.println("Volume: " + musicPlayer.getVolume());
         
         context.close();
     }

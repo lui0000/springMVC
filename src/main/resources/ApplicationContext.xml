@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd">
 
+           <bean id="musicPlayer" class="com.example.MusicPlayer">
+            <property name="musicList">
+                <util:list>
+                    <bean class="com.example.IndieMusic"/>
+                    <bean class="com.example.ClassicalMusic"/>
+                </util:list>
+            </property>
+        </bean>
+        
+        
+
+<!-- 
     <bean id="musicBean"
         class="com.example.ClassicalMusic"> 
     </bean>
+    
     <bean id="musicPlayer"
     class="com.example.MusicPlayer">
         <property name="music" ref="musicBean"></property>
-        <property name="name" value="Some name"/>
-        <property name="volume" value="50"/>
-    </bean>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
+    </bean> -->
 
 </beans>
