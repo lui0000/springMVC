@@ -10,27 +10,29 @@
            http://www.springframework.org/schema/util
            http://www.springframework.org/schema/util/spring-util.xsd">
 
-           <bean id="musicPlayer" class="com.example.MusicPlayer">
+           <!-- <bean id="musicPlayer" class="com.example.MusicPlayer">
             <property name="musicList">
                 <util:list>
                     <bean class="com.example.IndieMusic"/>
                     <bean class="com.example.ClassicalMusic"/>
                 </util:list>
             </property>
-        </bean>
+        </bean> -->
         
         
 
-<!-- 
+
     <bean id="musicBean"
         class="com.example.ClassicalMusic"> 
     </bean>
     
     <bean id="musicPlayer"
-    class="com.example.MusicPlayer">
+    class="com.example.MusicPlayer"
+    scope="prototype">
+    
         <property name="music" ref="musicBean"></property>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
-    </bean> -->
+    </bean>
 
 </beans>
