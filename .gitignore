@@ -1,0 +1,13 @@
+# Compiled class file
+target/
+
+# Logs
+logs/
+
+# IDE specific files
+.idea/
+.vscode/
+*.iml
+
+# Maven specific files
+.mvn/
